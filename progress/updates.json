@@ -1,0 +1,115 @@
+{
+  "lastUpdated": "9 May 2026",
+  "status": "Stage 1 prototype ready for controlled testing",
+  "progressPercent": 78,
+  "currentFocus": "The Stage 1 intake dashboard is now focused on safe referral upload, patient detail review, automatic Cliniko duplicate checks, in-portal source-file viewing, and preparing a controlled test route for Cliniko sync.",
+  "recentUpdates": [
+    {
+      "date": "9 May 2026",
+      "title": "Prototype simplified for staff testing",
+      "body": "The dashboard has been redesigned into a cleaner two-panel workspace so staff can select a referral, review the patient details, open source files inside the portal, add notes, and continue the workflow without leaving the page."
+    },
+    {
+      "date": "9 May 2026",
+      "title": "Source files now open in the portal",
+      "body": "Referral PDFs, RTFs and uploaded files are now designed to open in an in-portal preview window, reducing the need for reception to download files just to read what was sent."
+    },
+    {
+      "date": "9 May 2026",
+      "title": "Cliniko duplicate checks now run automatically",
+      "body": "After referral upload and extraction, the system rebuilds the intake queue and checks Cliniko for possible duplicate patients using available identifiers such as name, DOB, email, phone, NHS number, postcode and address."
+    },
+    {
+      "date": "9 May 2026",
+      "title": "Stage 2 reporting direction mapped",
+      "body": "The next layer will reuse the Cliniko patient link and NHS case record to show appointment history, attended/DNA/cancelled status, follow-ups, discharge triggers and monthly reporting fields for Victoria."
+    },
+    {
+      "date": "7 May 2026",
+      "title": "Client progress portal created",
+      "body": "A simple progress website has been created so Victoria can see what has been built, what is being tested, and what is coming next."
+    }
+  ],
+  "stages": [
+    {
+      "name": "Stage 1A",
+      "label": "Referral intake and admin workspace",
+      "status": "Built for prototype testing",
+      "summary": "Create a controlled workspace where staff can upload referral files, view the source document, review extracted demographics, and keep the patient in the dashboard until the details are checked.",
+      "complete": [
+        "Compact referral upload flow",
+        "Referral queue with active, urgent, Cliniko match, completed and all-referral views",
+        "Clickable in-portal source-file preview",
+        "Editable patient contact/demographic fields",
+        "Action notes and mark-as-complete workflow",
+        "Safe anonymised public demo for Victoria feedback"
+      ],
+      "next": [
+        "Test with controlled dummy referral files",
+        "Confirm which fields reception must complete before sync",
+        "Tidy any UI issues Victoria finds during road testing"
+      ]
+    },
+    {
+      "name": "Stage 1B",
+      "label": "Cliniko duplicate checks and controlled sync",
+      "status": "Ready for controlled live testing",
+      "summary": "Before any patient is created, the system checks Cliniko for possible existing records and blocks unsafe duplicate creation. The first real test should be done with a clearly named dummy patient.",
+      "complete": [
+        "Automatic Cliniko sweep after upload/extraction",
+        "Searches across name, DOB, email, phone, NHS number, postcode and address where available",
+        "Possible-match warning state in the dashboard",
+        "Direct link pathway for existing Cliniko records",
+        "Dry-run Cliniko creation mode available for safety"
+      ],
+      "next": [
+        "Create one agreed dummy patient test pack",
+        "Run Cliniko sync in dry-run and check the payload",
+        "Switch to one controlled live dummy patient creation only when the payload is approved",
+        "Check that the created dummy patient can be found on the next duplicate sweep"
+      ]
+    },
+    {
+      "name": "Stage 1C",
+      "label": "Med Tech contact and patient communication support",
+      "status": "In build / connected for workflow",
+      "summary": "Create or open the patient contact in Med Tech so reception can phone, email or message the patient using a clean contact workflow and canned booking wording.",
+      "complete": [
+        "Med Tech contact open/create flow drafted",
+        "Canned booking message available in the patient workflow",
+        "Optional contact route explained for reception"
+      ],
+      "next": [
+        "Test contact creation with dummy details",
+        "Confirm final wording for SMS/email booking prompts",
+        "Decide whether Med Tech creation happens automatically after referral review or only after staff confirmation"
+      ]
+    },
+    {
+      "name": "Stage 2",
+      "label": "Cliniko history and NHS reporting workspace",
+      "status": "Planned next layer",
+      "summary": "Use the linked Cliniko patient and structured NHS case record to help Victoria see appointment history and pre-populate monthly reporting, DNA, discharge and activity fields.",
+      "complete": [
+        "NHS required report fields identified",
+        "Discharge and DNA code sets captured",
+        "Stage 2 data fields added behind a collapsible NHS report section",
+        "Cliniko appointment fields identified as likely useful: date/time, appointment type, practitioner, patient_arrived, did_not_arrive, cancellation status and notes"
+      ],
+      "next": [
+        "Pull appointment history for matched Cliniko patients",
+        "Show previous appointments, attended/DNA/cancelled status and future bookings in the portal",
+        "Map Cliniko appointment data to Victoria's monthly NHS report fields",
+        "Build reporting views for referrals, DNAs, initial assessments, follow-ups, cancellations and discharge summaries",
+        "Confirm whether exact arrival timestamps are available in live Cliniko API data"
+      ]
+    }
+  ],
+  "buildLog": [
+    "Dashboard API and frontend running locally for testing.",
+    "Cliniko and Med Tech credentials are stored locally as secrets and are not published.",
+    "Cliniko dry-run mode should remain on until the first dummy patient payload is approved.",
+    "The public demo remains anonymised and does not create live Cliniko or Med Tech records.",
+    "No patient-identifiable data is published on this progress website."
+  ]
+}

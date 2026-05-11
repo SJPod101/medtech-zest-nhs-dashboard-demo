@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Zest NHS Automation Progress</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Project navigation">
+        <a class="brand" href="#top" aria-label="Project home">
+          <img src="./assets/MedTech-logo.png" alt="MedTech AI" />
+          <span>MedTech AI</span>
+        </a>
+        <div class="navlinks">
+          <a href="#progress">Progress</a>
+          <a href="#stages">Stages</a>
+          <a href="#updates">Updates</a>
+          <a href="#next">Next</a>
+        </div>
+      </nav>
+
+      <section id="top" class="heroGrid">
+        <div class="heroCopy">
+          <img class="zestLogo" src="./assets/zest-logo.png" alt="Zest Podiatry" />
+          <h1>Zest NHS Contract Automation</h1>
+          <p class="lead">A live client progress page for Victoria and the Zest team to review what has been built, what is being tested, and what is coming next.</p>
+          <div class="heroActions">
+            <a class="primaryButton" href="#updates">View latest update</a>
+            <a class="secondaryButton" href="#stages">See project stages</a>
+          </div>
+        </div>
+        <aside class="statusPanel" aria-label="Current project status">
+          <span>Current focus</span>
+          <strong id="statusText">Loading progress...</strong>
+          <div class="progressBar" aria-label="Project progress">
+            <div id="progressFill"></div>
+          </div>
+          <small id="lastUpdated">Last updated loading...</small>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section id="progress" class="sectionIntro">
+        <span>Progress Snapshot</span>
+        <h2>Where the build is right now</h2>
+        <p id="currentFocus">Loading the latest project focus.</p>
+      </section>
+
+      <section class="snapshotGrid" aria-label="Build snapshot">
+        <article>
+          <strong>Stage 1</strong>
+          <span>Referral intake and staff workspace</span>
+        </article>
+        <article>
+          <strong>Safe sync</strong>
+          <span>Cliniko duplicate checks before patient creation</span>
+        </article>
+        <article>
+          <strong>Med Tech</strong>
+          <span>Contact open/create flow being connected</span>
+        </article>
+        <article>
+          <strong>OCR next</strong>
+          <span>Scanned and handwritten referrals need review flags</span>
+        </article>
+      </section>
+
+      <section id="stages" class="stageSection">
+        <div class="sectionIntro compact">
+          <span>Delivery Stages</span>
+          <h2>Build plan</h2>
+        </div>
+        <div id="stageList" class="stageList"></div>
+      </section>
+
+      <section id="updates" class="updatesSection">
+        <div class="sectionIntro compact">
+          <span>Daily Updates</span>
+          <h2>Latest progress notes</h2>
+        </div>
+        <div id="updatesList" class="updatesList"></div>
+      </section>
+
+      <section id="next" class="nextSection">
+        <div>
+          <span>Next Review</span>
+          <h2>What we will confirm with Victoria</h2>
+        </div>
+        <ul>
+          <li>Which referral fields must be mandatory before staff can sync.</li>
+          <li>How confident OCR needs to be before the dashboard allows a staff review.</li>
+          <li>Whether Cliniko import remains manual approval-only during early testing.</li>
+          <li>Which NHS reports are highest priority for Stage 2.</li>
+        </ul>
+      </section>
+
+      <section class="buildLog" aria-label="Technical build notes">
+        <h2>Build notes</h2>
+        <ul id="buildLog"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>MedTech AI for Zest Podiatry</span>
+      <span>No patient-identifiable data is published on this progress page.</span>
+    </footer>
+
+    <script src="./progress.js"></script>
+  </body>
+</html>

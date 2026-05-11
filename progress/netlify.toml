@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/updates.json"
+  [headers.values]
+    Cache-Control = "no-store"
